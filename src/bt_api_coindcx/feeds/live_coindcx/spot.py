@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from bt_api_base.feeds.capability import Capability
+
 from bt_api_coindcx.feeds.live_coindcx.request_base import CoinDCXRequestData
 
 

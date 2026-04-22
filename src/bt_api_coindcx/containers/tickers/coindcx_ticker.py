@@ -6,4 +6,4 @@ from bt_api_coindcx.containers.tickers import (
     CoinDCXWssTickerData,
 )
 
-__all__ = ["CoinDCXTickerData", "CoinDCXRequestTickerData", "CoinDCXWssTickerData"]
+__all__ = ["CoinDCXRequestTickerData", "CoinDCXTickerData", "CoinDCXWssTickerData"]
