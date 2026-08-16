@@ -1,3 +1,4 @@
+"""Module documentation"""
 from __future__ import annotations
 
 import hashlib
@@ -30,6 +31,7 @@ class CoinDCXRequestData(Feed):
         }
 
     def __init__(self, data_queue: Any = None, **kwargs: Any) -> None:
+        """__init__ method"""
         super().__init__(data_queue, **kwargs)
         self.data_queue = data_queue
         self.exchange_name = kwargs.get("exchange_name", "COINDCX___SPOT")
@@ -132,12 +134,15 @@ class CoinDCXRequestData(Feed):
             self.data_queue.put(data)
 
     def connect(self):
+        """connect method"""
         pass
 
     def disconnect(self):
+        """disconnect method"""
         super().disconnect()
 
     def is_connected(self):
+        """is_connected method"""
         return True
 
     def _get_server_time(self, extra_data=None, **kwargs):

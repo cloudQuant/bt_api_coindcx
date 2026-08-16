@@ -1,3 +1,4 @@
+"""Module-level docstring."""
 from __future__ import annotations
 
 from typing import Any
@@ -9,6 +10,7 @@ from bt_api_coindcx.registry_registration import register_coindcx
 
 
 def get_plugin_info() -> PluginInfo:
+    """get_plugin_info function"""
     return PluginInfo(
         name="bt_api_coindcx",
         version=__version__,
@@ -20,6 +22,7 @@ def get_plugin_info() -> PluginInfo:
 
 
 def register_plugin(registry: Any, runtime_factory: Any) -> PluginInfo:
+    """register_plugin function"""
     del runtime_factory
     register_coindcx(registry)
     return get_plugin_info()

@@ -1,3 +1,4 @@
+"""Module-level docstring."""
 from __future__ import annotations
 
 from typing import Any
@@ -24,6 +25,7 @@ class CoinDCXRequestDataSpot(CoinDCXRequestData):
         }
 
     def __init__(self, data_queue: Any = None, **kwargs: Any) -> None:
+        """__init__ method"""
         super().__init__(data_queue, **kwargs)
         self.exchange_name = kwargs.get("exchange_name", "COINDCX___SPOT")
 

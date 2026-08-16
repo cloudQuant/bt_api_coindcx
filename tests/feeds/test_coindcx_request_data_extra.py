@@ -1,3 +1,4 @@
+"""Module-level docstring."""
 from __future__ import annotations
 
 from unittest.mock import MagicMock
@@ -6,6 +7,7 @@ from bt_api_coindcx.feeds.live_coindcx.request_base import CoinDCXRequestData
 
 
 def test_coindcx_disconnect_closes_http_client() -> None:
+    """test_coindcx_disconnect_closes_http_client function"""
     request_data = CoinDCXRequestData()
     request_data._http_client.close = MagicMock()
 
@@ -15,6 +17,7 @@ def test_coindcx_disconnect_closes_http_client() -> None:
 
 
 def test_coindcx_falls_back_to_api_credentials_when_aliases_are_empty() -> None:
+    """test_coindcx_falls_back_to_api_credentials_when_aliases_are_empty function"""
     request_data = CoinDCXRequestData(
         public_key="",
         api_key="public-key",

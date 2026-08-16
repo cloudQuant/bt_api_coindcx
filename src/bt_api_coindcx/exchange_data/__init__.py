@@ -1,3 +1,4 @@
+"""Module-level docstring."""
 from __future__ import annotations
 
 from bt_api_base.containers.exchanges.exchange_data import ExchangeData
@@ -19,7 +20,9 @@ _FALLBACK_REST_PATHS = {
 
 
 class CoinDCXExchangeData(ExchangeData):
+    """Class CoinDCXExchangeData"""
     def __init__(self) -> None:
+        """__init__ method"""
         super().__init__()
         self.exchange_name = "coindcx"
         self.rest_url = "https://api.coindcx.com"
@@ -39,19 +42,24 @@ class CoinDCXExchangeData(ExchangeData):
         self.legal_currency = ["INR", "USDT", "BTC", "ETH"]
 
     def get_symbol(self, symbol: str) -> str:
+        """get_symbol method"""
         return symbol.upper().replace("/", "").replace("-", "").replace("_", "")
 
     def get_period(self, key: str) -> str:
+        """get_period method"""
         return self.kline_periods.get(key, key)
 
     def get_rest_path(self, key: str, **kwargs) -> str:
+        """get_rest_path method"""
         if key not in self.rest_paths or self.rest_paths[key] == "":
             raise ValueError(f"[{self.exchange_name}] REST path not found: {key}")
         return self.rest_paths[key]
 
 
 class CoinDCXExchangeDataSpot(CoinDCXExchangeData):
+    """Class CoinDCXExchangeDataSpot"""
     def __init__(self) -> None:
+        """__init__ method"""
         super().__init__()
         self.asset_type = "SPOT"
         self.api_key: str | None = None
