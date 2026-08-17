@@ -94,3 +94,6 @@ python_version = "3.9"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
+
+[project.entry-points."bt_api.plugins"]
+coindcx = "bt_api_coindcx.plugin:register_plugin"
